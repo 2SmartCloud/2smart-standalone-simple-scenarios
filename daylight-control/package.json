@@ -1,0 +1,23 @@
+{
+  "name": "@2smart/daylight-control",
+  "version": "1.0.6",
+  "description": "This scenario will allow you to control the daylight in the room according to the sunrise and sunset.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "author": "WebbyLab",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "suncalc": "^1.8.0",
+    "tz-lookup": "^6.1.25"
+  }
+}

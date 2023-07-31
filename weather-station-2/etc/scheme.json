@@ -1,0 +1,18 @@
+[
+    {
+        "label":"Pressure entity(value must be in millibars)*",
+        "name":"PRESSURE_TOPIC",
+        "type" : "topic",
+        "topicDataTypes" : ["string", "integer", "float"],
+        "validation": ["required", "string"],
+        "placeholder": "Select topic"
+      },
+      {
+        "label":"Wind direction entity(value must be in degrees)*",
+        "name":"WIND_DIRECTION_TOPIC",
+        "type" : "topic",
+        "topicDataTypes" : ["string", "integer", "float"],
+        "validation": ["required", "string"],
+        "placeholder": "Select topic"
+      }
+]

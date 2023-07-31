@@ -1,0 +1,60 @@
+[
+    {
+        "label":"City",
+        "description": "Select the city for which the scenario will run.",
+        "name":"CITY",
+        "type":"enum-async",
+        "basePath":"/cities",
+        "validation":["required","string"],
+        "placeholder":"Search city"
+    },
+    {
+        "label": "Sensors for activation",
+        "description": "Choose the path to the device or sensors to be activated at sunrise and sunset.\n(example: sweet-home/device/node/sensor)",
+        "name": "ACTIVATION_SENSORS",
+        "type": "topics",
+        "topicDataTypes": ["string","integer","float","boolean","enum","color"],
+        "validation": [ "required", { "list_of":"string" } ],
+        "placeholder": "Select sensors"
+    },
+    {
+        "label":"Message for sunrise",
+        "description": "Set the message to be set to selected sensors.\n(example: true)",
+        "name":"SUNRISE_MESSAGE",
+        "type":"string",
+        "validation":["string"],
+        "placeholder":"Set value",
+        "default": true,
+        "advanced": true
+    },
+    {
+        "label":"Time offset for sunrise",
+        "description": "Set the time (in minutes) relative to sunrise after which the selected sensor should be triggered.\n(example: 20, -20)",
+        "name":"SUNRISE_OFFSET",
+        "type":"number",
+        "validation":["decimal",{"default":0}],
+        "placeholder":"Set value",
+        "default": 0,
+        "advanced": true
+    },
+    {
+        "label":"Message for sunset",
+        "description": "Set the message to be set to selected sensors.\n(example: true)",
+        "name":"SUNSET_MESSAGE",
+        "type":"string",
+        "validation":["string"],
+        "placeholder":"Set value",
+        "default": true,
+        "advanced": true
+    },
+    {
+        "label":"Time offset for sunset",
+        "description": "Set the time (in minutes) relative to sunset after which the selected sensor should be triggered.\n(example: 20, -20)",
+        "name":"SUNSET_OFFSET",
+        "type":"number",
+        "validation":["decimal",{"default":0}],
+        "placeholder":"Set value",
+        "default": 0,
+        "advanced": true
+    }
+]

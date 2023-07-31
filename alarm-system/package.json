@@ -1,0 +1,17 @@
+{
+  "name": "@2smart/alarm-system",
+  "version": "1.4.0",
+  "description": "This scenario will allow you to protect your home by setting up an alarm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC"
+}

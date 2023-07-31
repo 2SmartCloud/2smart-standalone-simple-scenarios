@@ -1,0 +1,28 @@
+[
+  {
+    "label": "Query",
+    "description": "Enter a query to the database to display historical data.\n(example: Select ‘the name of the column’ from ‘table name’ where ‘condition’)",
+    "name": "QUERY",
+    "type": "string",
+    "validation": [
+      "required",
+      "string",
+      "trim"
+    ],
+    "placeholder": "Set query"
+  },
+  {
+    "label": "Update interval",
+    "description": "Specify the interval (in seconds) at which the query will be executed.\n(example: 60)",
+    "name": "INTERVAL",
+    "type": "number",
+    "validation": [
+      "required",
+      "positive_decimal",
+      {"min_number":5}
+    ],
+    "placeholder": "Set interval",
+    "advanced": true,
+    "default": 60
+  }
+]

@@ -1,0 +1,49 @@
+[
+    {
+        "label":"Temperature sensor",
+        "description": "Choose the path to the device or sensor of the temperature. (example: sweet-home/device/node/sensor)",
+        "name":"TEMP_TOPIC",
+        "type":"topic",
+        "topicDataTypes":["float","integer"],
+        "validation":["required","string"],
+        "placeholder":"Select sensor"
+    },
+    {
+        "label":"Heater",
+        "description": "Choose the path to the device or sensors that will be switched when the temperature becomes less than permissible for the selected heating process. \n(example: sweet-home/device/node/sensor)",
+        "name":"HEATING_SWITCH_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["boolean"],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select sensors"
+    },
+    {
+        "label":"Cooler",
+        "description": "Choose the path to the device or sensors that will be switched when temperature becomes more than permissible for the selected cooling process. \n(example: sweet-home/device/node/sensor)",
+        "name":"COOLING_SWITCH_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["boolean"],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select sensors"
+    },
+    {
+        "label":"Mixed hysteresis",
+        "description": "Set the number of temperature differences between turning the heating/cooling process on and off. The sum of hysteresis and mixed hysteresis fields sets step to switch mode.",
+        "name":"MIXED_HYSTERESIS",
+        "type":"number",
+        "validation":["required","positive_decimal"],
+        "placeholder":"Set value",
+        "default": 1,
+        "advanced": true
+    },
+    {
+        "label":"Hysteresis",
+        "description": "Set the number of temperature differences between turning the heating/cooling process on and off. The sum of hysteresis and mixed hysteresis fields sets step to switch mode.",
+        "name":"HYSTERESIS",
+        "type":"number",
+        "validation":["decimal",{"default":0},{"min_number":0}],
+        "placeholder":"Set value",
+        "default": 2,
+        "advanced": true
+    }
+]

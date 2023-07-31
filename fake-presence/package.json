@@ -1,0 +1,17 @@
+{
+  "name": "@2smart/fake-presence",
+  "version": "1.1.0",
+  "description": "This scenario will allow you to simulate presence in your home.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC"
+}

@@ -1,0 +1,53 @@
+[
+    {
+      "label":"Lighting",
+      "description": "Choose the path to the device or sensors that will be switched for turning on the light.\n(example: sweet-home/device/node/sensor)",
+      "name":"SWITCH_TOPIC",
+      "type" : "topics",
+      "topicDataTypes" : ["boolean"],
+      "validation": ["required", "not_empty_list", {"list_of":"string"}],
+      "placeholder": "Select sensors"
+    },
+    {
+      "label":"Motion sensor",
+      "description": "Choose the path to the sensor to determine the presence of a source of motion.\n(example: sweet-home/device/node/sensor)",
+      "name":"MOTION_TOPIC",
+      "type" : "topic",
+      "topicDataTypes" : ["string", "integer", "float", "boolean", "enum", "color"],
+      "validation": ["required", "string"],
+      "placeholder": "Select sensor"
+    },
+    {
+      "label": "Trigger message",
+      "description": "Set a message that will be sent from the motion sensor to turn on the light. \n(example: true)",
+      "name": "TRIGGER_MESSAGE",
+      "type": "string",
+      "validation": ["required", "string"],
+      "placeholder": "Set value",
+      "default": "true",
+      "advanced": true
+    },
+    {
+      "label":"Shutdown time",
+      "description": "Set the time (in seconds) during which the light will be turned on in case of motion sensor activation.\n(example: 60)",
+      "name":"SHUTDOWN_TIME",
+      "type": "number",
+      "validation": [
+        "positive_decimal",
+        { "default": 10 }
+      ],
+      "placeholder": "Set value",
+      "default": 10,
+      "advanced": true
+    },
+    {
+      "label":"Illumination sensor",
+      "description": "Choose the path to the sensor that will define the illumination level.\n(example: sweet-home/device/node/sensor)",
+      "name":"LIGHTING_TOPIC",
+      "type" : "topic",
+      "topicDataTypes" : ["string", "integer", "float"],
+      "validation": ["string"],
+      "placeholder": "Select sensor",
+      "advanced": true
+    }
+  ]

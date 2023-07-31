@@ -1,0 +1,50 @@
+[
+    {
+        "label": "City",
+        "description": "Select the city for which the scenario will run.",
+        "name": "CITY_COORDINATES",
+        "type": "enum-async",
+        "basePath": "/cities",
+        "validation": ["required","string"],
+        "placeholder": "Search city"
+    },
+    {
+        "label": "Switchers",
+        "description": "Choose the path to the device or sensors to be turned on for daylight control.\n(example: sweet-home/device/node/sensor)",
+        "name": "SWITCHER_TOPICS",
+        "type": "topics",
+        "topicDataTypes": ["string","integer","float","boolean","enum","color"],
+        "validation": [{"list_of":"string"}],
+        "placeholder": "Select sensors"
+    },
+    {
+        "label": "Message on",
+        "description": "Set message at which the light should be turned on.\n(example: true)",
+        "name": "MESSAGE_ON",
+        "type": "string",
+        "validation": ["string"],
+        "default": "true",
+        "placeholder": "Message on",
+        "advanced": true
+    },
+    {
+        "label": "Message off",
+        "description": "Set message at which the light should be turned off.\n(example: false)",
+        "name": "MESSAGE_OFF",
+        "type": "string",
+        "validation": ["string"],
+        "default": "false",
+        "placeholder": "Message off",
+        "advanced": true
+    },
+    {
+        "label": "Time offset",
+        "description": "Set the time (in minutes) by which you want to shift the time of turning on the light before sunset. (example: 20)",
+        "name": "OFFSET",
+        "type": "number",
+        "validation": [ "integer", { "min_number": 0 }, { "default": 0 } ],
+        "placeholder": "Set value",
+        "default": 0,
+        "advanced": true
+    }
+]

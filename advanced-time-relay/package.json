@@ -1,0 +1,22 @@
+{
+  "name": "@2smart/advanced-time-relay",
+  "version": "1.2.0",
+  "description": "This scenario will allow you to switch your outputs according to setup time intervals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "cron-parser": "^2.15.0",
+    "debounce": "^1.2.1"
+  }
+}

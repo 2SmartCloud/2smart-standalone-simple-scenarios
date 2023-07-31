@@ -1,0 +1,68 @@
+[
+    {
+        "label":"Temperature sensor",
+        "description": "Choose the path to the sensor of the temperature. (example: sweet-home/device/node/sensor)",
+        "name":"TEMP_TOPIC",
+        "type":"topic",
+        "topicDataTypes":["float","integer"],
+        "validation":["required","string"],
+        "placeholder":"Select sensor"
+    },
+    {
+        "label":"Switchers",
+        "description": "Choose the path to the device or sensors that will be switched when temperature becomes more or less for selected heating/cooling process. (example: sweet-home/device/node/sensor)",
+        "name":"SWITCH_TOPIC",
+        "type":"topics",
+        "topicDataTypes":[
+            "string",
+            "integer",
+            "float",
+            "boolean"
+        ],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select switchers"
+    },
+    {
+        "label":"Mode",
+        "name":"MODE",
+        "type":"enum",
+        "format":[
+            {"label":"Heating","value":"heating"},
+            {"label":"Cooling","value":"cooling"}
+        ],
+        "default": "heating",
+        "validation":["required","string"],
+        "placeholder":"Select mode",
+        "advanced": true
+    },
+    {
+        "label":"Hysteresis",
+        "description": "Set the number of temperature differences between turning the heating/cooling process on and off. \n(example: 2)",
+        "name":"HYSTERESIS",
+        "type":"number",
+        "default": 2,
+        "validation":["decimal",{"default":2},{"min_number":0}],
+        "placeholder":"Set value",
+        "advanced": true
+    },
+    {
+        "label":"Message on",
+        "description": "Set message at which the heating/cooling process should be turned on. \n(example: true)",
+        "name":"MESSAGE_ON",
+        "type":"string",
+        "validation":["string"],
+        "default": "true",
+        "placeholder":"Message on",
+        "advanced": true
+    },
+    {
+        "label":"Message off",
+        "description": "Set message at which the heating/cooling process should be turned off. \n(example: false)",
+        "name":"MESSAGE_OFF",
+        "type":"string",
+        "validation":["string"],
+        "default": "false",
+        "placeholder":"Message off",
+        "advanced": true
+    }
+]

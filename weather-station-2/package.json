@@ -1,0 +1,17 @@
+{
+  "name": "@2smart/weather-station",
+  "version": "0.0.1",
+  "description": "Set pressure and wind direction topic(value must be in degrees). Scenario will predict forecast for the next 12 hours using Zambretti algorithm. A forecast at approx. 09:00 local Solar Time is allegedly better than 90% accurate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC"
+}

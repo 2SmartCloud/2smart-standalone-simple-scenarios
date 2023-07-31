@@ -1,0 +1,49 @@
+[
+    {
+        "label":"Outputs",
+        "description": "Choose the path to the device or sensors that will switched according to the configured schedule. (example: sweet-home/device/node/sensor)",
+        "name":"OUTPUT_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["string","integer","float","boolean","enum","color"],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select outputs"
+    },
+    {
+        "label":"Pulse duration",
+        "description": "Set the duration of impulse to selected outputs in minutes",
+        "name":"PULSE_DURATION",
+        "type":"number",
+        "default": 30,
+        "validation":["decimal",{"default":30},{"min_number":1}],
+        "placeholder":"Set value"
+    },
+    {
+        "label":"Pause duration",
+        "description": "Set the duration of pause between impulses in minutes",
+        "name":"PAUSE_DURATION",
+        "type":"number",
+        "default": 30,
+        "validation":["decimal",{"default":30},{"min_number":1}],
+        "placeholder":"Set value"
+    },
+    {
+        "label":"Message on",
+        "description": "Set the message to start the pulse.\n(example: true)",
+        "name":"MESSAGE_ON_VALUE",
+        "type":"string",
+        "default": "true",
+        "validation":["required","string"],
+        "placeholder":"Set value",
+        "advanced": true
+    },
+    {
+        "label":"Message off",
+        "description": "Set the message to end the pulse.\n(example: false)",
+        "name":"MESSAGE_OFF_VALUE",
+        "type":"string",
+        "default": "false",
+        "validation":["required","string"],
+        "placeholder":"Set value",
+        "advanced": true
+    }
+]

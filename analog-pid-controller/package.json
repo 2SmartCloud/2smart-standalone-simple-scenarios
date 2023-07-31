@@ -1,0 +1,17 @@
+{
+  "name": "@2smart/analog-pid-controller",
+  "version": "1.3.0",
+  "description": "This scenario will allow you to monitor the state of your selected  system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@2smart/lighting-control",
+  "version": "1.1.1",
+  "description": "This scenario will allow you to control the light on/off based on movement in the room and control the illumination level.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC"
+}

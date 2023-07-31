@@ -1,0 +1,17 @@
+{
+  "name": "@2smart/mixed-thermostat",
+  "version": "1.1.2",
+  "description": "This scenario will help you to provide automatic on/off heating and cooling processes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC"
+}

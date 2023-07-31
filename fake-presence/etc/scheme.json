@@ -1,0 +1,90 @@
+[
+    {
+        "label":"Switchers",
+        "description": "Choose the path to the device or sensors to be turned on for the fake presence. \n(example: sweet-home/device/node/sensor)",
+        "name":"TOPICS",
+        "type" : "topics",
+        "topicDataTypes" : ["string", "integer", "float", "boolean", "enum", "color"],
+        "validation": ["required", "not_empty_list", {"list_of":"string"}],
+        "placeholder": "Select switchers"
+    },
+
+    {
+        "label": "Message to activate",
+        "description": "Set a message that will be sent to the sensor to activate the fake presence.\n(example: true)",
+        "name": "ON_MESSAGE",
+        "type": "string",
+        "placeholder": "Set value",
+        "validation": ["required","string"],
+        "default": true,
+        "advanced": true
+    },
+    {
+        "label": "Message to deactivate",
+        "description": "Set a message that will be sent to the sensor to deactivate the fake presence.\n(example: false)",
+        "name": "OFF_MESSAGE",
+        "type": "string",
+        "placeholder": "Set value",
+        "validation": ["required","string"],
+        "default": false,
+        "advanced": true
+    },
+
+    {
+        "label":"Minimum value to activate state",
+        "description": "Set the minimum time (in seconds) at which the fake presence will be activated. \n(example: 100)",
+        "name":"ON_MIN_DURATION",
+        "type": "number",
+        "validation": [
+          "required",
+          "positive_decimal",
+          { "less_than": "ON_MAX_DURATION"}
+        ],
+        "placeholder": "Set value",
+        "default": 60,
+        "advanced": true
+    },
+    {
+        "label":"Maximum value to activate state",
+        "description": "Set the maximum time (in seconds) at which the fake presence will be activated. \n(example: 100)",
+        "name":"ON_MAX_DURATION",
+        "type": "number",
+        "validation": [
+          "required",
+          "positive_decimal",
+          { "greater_than": "ON_MIN_DURATION"}
+        ],
+        "placeholder": "Set value",
+        "default": 1800,
+        "advanced": true
+    },
+
+    {
+        "label":"Minimum value to deactivate state",
+        "description": "Set the minimum time (in seconds) at which the fake presence will be deactivated. \n(example: 100)",
+        "name":"OFF_MIN_DURATION",
+        "type": "number",
+        "validation": [
+          "required",
+          "positive_decimal",
+          { "less_than": "OFF_MAX_DURATION"}
+        ],
+        "placeholder": "Set value",
+        "default": 60,
+        "advanced": true
+    },
+    {
+        "label":"Maximum value to deactivate state",
+        "description": "Set the maximum time (in seconds) at which the fake presence will be deactivated. \n(example: 100)",
+        "name":"OFF_MAX_DURATION",
+        "type": "number",
+        "validation": [
+          "required",
+          "positive_decimal",
+          { "greater_than": "OFF_MIN_DURATION"}
+        ],
+        "placeholder": "Set value",
+        "default": 1800,
+        "advanced": true
+    }
+  ]

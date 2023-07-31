@@ -1,0 +1,17 @@
+{
+  "name": "@2smart/thermal-power",
+  "version": "1.0.0",
+  "description": "This scenario will alow you to calculate characteristics of your heat pump.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC"
+}

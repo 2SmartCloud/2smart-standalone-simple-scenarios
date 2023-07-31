@@ -1,0 +1,22 @@
+image: $DOCKER_REGISTRY_PREFIX/2smart/utils/combined-ci-image:latest
+
+stages:
+  - test
+  - publish
+
+lint:
+  before_script:
+    - npm i
+  stage: test
+  script:
+    - npm run test:lint
+  only:
+    - 'merge_requests'
+    - 'master'
+
+publish:
+  stage: publish
+  script:
+    - ./publish.sh
+  only:
+    - 'master'

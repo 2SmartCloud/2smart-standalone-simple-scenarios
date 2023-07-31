@@ -1,0 +1,80 @@
+[
+    {
+        "label":"Sensor",
+        "description": "Choose the path to the sensor of the current state of the system. \n(example: sweet-home/device/node/sensor)",
+        "name":"INPUT_TOPIC",
+        "type":"topic",
+        "topicDataTypes":["float","integer","string"],
+        "validation":["required","string"],
+        "placeholder":"Select sensor"
+    },
+    {
+        "label":"Switchers",
+        "description": "Choose the path to the device or sensors for monitoring system status.\n(example: sweet-home/device/node/sensor)",
+        "name":"OUTPUT_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["float","integer","string"],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select switchers"
+    },
+    {
+        "label":"Proportional gain",
+        "description": "Set the correction for the current deviation. \n(example: 5)",
+        "name":"PROPORTIONAL_GAIN",
+        "type":"number",
+        "validation":["required","positive_decimal"],
+        "placeholder":"Set value",
+        "default":30,
+        "advanced": true
+    },
+    {
+        "label":"Integral gain",
+        "description": "Set the correction for the previous abnormality.\n(example: 5)",
+        "name":"INTEGRAL_GAIN",
+        "type":"number",
+        "validation":["required",{"min_number":0}],
+        "placeholder":"Set value",
+        "default":0,
+        "advanced": true
+    },
+    {
+        "label":"Derivative gain",
+        "description": "Set the predicted variance correction.\n(example: 5)",
+        "name":"DERIVATIVE_GAIN",
+        "type":"number",
+        "validation":["required",{"min_number":0}],
+        "placeholder":"Set value",
+        "default":20,
+        "advanced": true
+    },
+    {
+        "label":"Sample time",
+        "description": "Set the minimum interval (in ms) between adjustments.\n(example: 50)",
+        "name":"SAMPLE_TIME",
+        "type":"number",
+        "validation":["required",{"required_if_less_than_min_number":1000}],
+        "placeholder":"Set value",
+        "default":1000,
+        "advanced": true
+    },
+    {
+        "label":"Min range",
+        "description": "Enter the minimum value that the scenario can set.\n(example: 0)",
+        "name":"MIN_RANGE",
+        "type":"number",
+        "validation":["required",{"min_number":0},{ "less_than": "MAX_RANGE"}],
+        "placeholder":"Set value",
+        "advanced": true,
+        "default": 0
+    },
+    {
+        "label":"Max range",
+        "description": "Enter the maximum value that the scenario can set.\n(example: 100)",
+        "name":"MAX_RANGE",
+        "type":"number",
+        "validation":["required","positive_decimal",{ "greater_than": "MIN_RANGE"}],
+        "placeholder":"Set value",
+        "advanced": true,
+        "default": 100
+    }
+]

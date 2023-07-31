@@ -1,0 +1,157 @@
+[
+    {
+        "label":"Sensors for alarm activation",
+        "description": "Choose the path to the sensor for alarm system activation. \n(example: sweet-home/device/node/sensor)",
+        "name":"ACTIVATE_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["float","integer","boolean","enum","string","color"],
+        "validation":[{"list_of":"string"}],
+        "placeholder":"Select sensors",
+        "advanced": true
+    },
+    {
+        "label":"Message for alarm activation",
+        "description": "Set a message that will activate the alarm system. \n(example: true)",
+        "name":"ACTIVATE_MESSAGE",
+        "type":"string",
+        "validation":["string"],
+        "placeholder":"Set value",
+        "advanced": true,
+        "default": "true"
+    },
+    {
+        "label":"Message for alarm deactivation",
+        "description": "Set a message that will deactivate the alarm system. \n(example: false)",
+        "name":"DEACTIVATE_MESSAGE",
+        "type":"string",
+        "validation":["string"],
+        "placeholder":"Set value",
+        "advanced": true,
+        "default": "false"
+    },
+    {
+        "label":"Triggers",
+        "description": "Choose the path to sensors that should turn on the alarm when activated. \n(example: sweet-home/device/node/sensor)",
+        "name":"SENSOR_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["float","integer","boolean","enum","color"],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select sensors"
+    },
+    {
+        "label":"Trigger message",
+        "description": "Set the message at which the alarm should be turned on. \n(example: true)",
+        "name":"SENSOR_MESSAGE",
+        "type":"string",
+        "validation":["required","string"],
+        "placeholder":"Set value",
+        "default": "true"
+    },
+    {
+        "label":"Alarm sensors",
+        "description": "Choose the path to sensors, which will action when your selected triggers activate. \n(example: sweet-home/device/node/sensor)",
+        "name":"ACTION_TOPIC",
+        "type":"action-topics-config",
+        "topicDataTypes":["float","integer","boolean","enum","color"],
+        "validation":[
+            "required",
+            {
+                "list_of_objects":{
+                    "topic":["required","string"],
+                    "messageOn":["required","string"],
+                    "messageOff":["required","string"]
+                }
+            },
+            {"list_min_length":1}
+        ],
+        "default":[{"topic":"","messageOn":"","messageOff":""}],
+        "placeholder": "Set sensors"
+    },
+    {
+        "label" : "False positives handling",
+        "name" : "FALSE_POSITIVES_HANDLING",
+        "type" : "boolean",
+        "validation" : [{ "one_of" : [ true, false ] }],
+        "default" : false,
+        "advanced" : true,
+        "options" : {
+            "labelPlacement" : "left"
+        }
+    },
+    {
+        "label" : "Sensors quantity to turn on alarm",
+        "description" : "Set the number of triggered sensors that will turn on the alarm. (example: 5)",
+        "name" : "MIN_SENSORS_QUANTITY_TO_ALARM",
+        "type" : "number",
+        "validation" : [ "integer", { "min_number" : 2 }, { "default" : 2 } ],
+        "default" : 2,
+        "advanced" : true,
+        "options" : {
+            "labelPlacement" : "left"
+        }
+    },
+    {
+        "label" : "Maximal time between sensors invocation",
+        "description" : "Set the maximum time (in seconds, a period of time : 5 - 86400) between different sensors triggering. (example: 10)",
+        "name" : "MAX_INVOCATION_TIME_DIFF",
+        "type" : "number",
+        "validation" : [ "integer", { "min_number" : 5 }, { "max_number" : 86400 }, { "default" : 60 } ],
+        "default" : 60,
+        "advanced" : true,
+        "options" : {
+            "labelPlacement" : "left"
+        }
+    },
+    {
+        "label": "Notification channels",
+        "name": "NOTIFICATION_CHANNELS",
+        "type": "notification-config",
+        "validation": [{ "list_of": "string" }],
+        "default": [],
+        "advanced": true
+    },
+    {
+        "label": "Message for system arming",
+        "name": "SEND_SYSTEM_ARMING_MESSAGE",
+        "type": "boolean",
+        "validation": [{ "one_of": [true, false] }],
+        "default": false,
+        "advanced": true,
+        "options": {
+            "labelPlacement": "left"
+        }
+    },
+    {
+        "label": "Message for system disarming",
+        "name": "SEND_SYSTEM_DISARMING_MESSAGE",
+        "type": "boolean",
+        "validation": [{ "one_of": [true, false] }],
+        "default": false,
+        "advanced": true,
+        "options": {
+            "labelPlacement": "left"
+        }
+    },
+    {
+        "label": "Message for panic",
+        "name": "SEND_PANIC_MESSAGE",
+        "type": "boolean",
+        "validation": [{ "one_of": [true, false] }],
+        "default": false,
+        "advanced": true,
+        "options": {
+            "labelPlacement": "left"
+        }
+    },
+    {
+        "label" : "Message for suspicious state",
+        "name" : "SEND_MESSAGE_ON_SUSPICIOUS_STATE",
+        "type" : "boolean",
+        "validation" : [{ "one_of" : [true, false] }],
+        "default" : false,
+        "advanced" : true,
+        "options" : {
+            "labelPlacement" : "left"
+        }
+    }
+]

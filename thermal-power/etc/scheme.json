@@ -1,0 +1,29 @@
+[
+    {
+        "label":"Sensor for temperature delta",
+        "description": "Choose the path to the sensor that determines temperature delta. \n(example: sweet-home/device/node/sensor)",
+        "name":"TEMPERATURE_DELTA_TOPIC",
+        "type": "topic",
+        "topicDataTypes" : ["integer", "float", "string"],
+        "validation": ["required", "string"],
+        "placeholder": "Select topic"
+    },
+    {
+        "label":"Sensor for pump flow",
+        "description": "Choose the path to the sensor that controls pump flow. \n(example: sweet-home/device/node/sensor)",
+        "name":"PUMP_FLOW_TOPIC",
+        "type": "topic",
+        "topicDataTypes" : ["integer", "float", "string"],
+        "validation": ["required", "string"],
+        "placeholder": "Select topic"
+    },
+    {
+        "label":"Sensor for electricity power",
+        "description": "Choose the path to the sensor that determines electricity power. f. \n(example: sweet-home/device/node/sensor)",
+        "name":"ELECTRICITY_POWER_TOPIC",
+        "type": "topic",
+        "topicDataTypes" : ["integer", "float", "string"],
+        "validation": ["string"],
+        "placeholder": "Select topic"
+    }
+]

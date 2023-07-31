@@ -1,0 +1,24 @@
+[
+    {
+        "label": "Sensors",
+        "description": "Choose the path to sensors that change their value when you change the value of one of them. \n(example: sweet-home/device/node/sensor)",
+        "name": "TOPICS",
+        "type": "topics",
+        "topicDataTypes": [
+            "string",
+            "integer",
+            "float",
+            "boolean",
+            "enum",
+            "color"
+        ],
+        "validation": [
+            "required",
+            "not_empty_list",
+            {
+                "list_of": "string"
+            }
+        ],
+        "placeholder": "Select sensors"
+    }
+]

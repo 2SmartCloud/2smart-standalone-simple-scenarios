@@ -1,0 +1,83 @@
+[
+    {
+        "label":"Schedule",
+        "description": "Configure the schedule for watering by setting the time.",
+        "name":"SCHEDULE_CONFIG",
+        "type":"schedule-config",
+        "validation":[
+            "required",
+            {
+                "list_of_objects":{"start":["required","string"],"end":["required","string"]}
+            },
+            {"list_min_length":1}
+        ],
+        "default":[{"start":"","end":""}]
+    },
+    {
+        "label":"Switchers",
+        "description": "Choose the path to the device or sensors that will be switched for turning on the watering.\n(example: sweet-home/device/node/sensor)",
+        "name":"OUTPUT_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["string","integer","float","boolean","enum","color"],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select switchers"
+    },
+    {
+        "label":"Value for start time",
+        "description": "Set the value for the start of the time interval.\n(example: 10)",
+        "name":"START_TIME_VALUE",
+        "type":"string",
+        "default": 10,
+        "validation":["required","string"],
+        "placeholder":"Set value"
+    },
+    {
+        "label":"Value for end time",
+        "description": "Set the value for the end of the time interval.\n(example: 20)",
+        "name":"END_TIME_VALUE",
+        "type":"string",
+        "default": 20,
+        "validation":["required","string"],
+        "placeholder":"Set value"
+    },
+    {
+        "label":"Weather sensor",
+        "description": "Choose the path to the sensor of the weather state.\n(example: sweet-home/device/node/sensor)",
+        "name":"WEATHER_TOPIC",
+        "type":"topic",
+        "topicDataTypes":["string"],
+        "validation":["string"],
+        "placeholder":"Select sensor",
+        "advanced": true
+    },
+    {
+        "label":"Weather condition",
+        "description": "Set the value at which watering should be stopped. \n(example: rainy)",
+        "name":"WEATHER_CONDITION",
+        "type":"string",
+        "default": "rainy",
+        "validation":["string"],
+        "placeholder":"Set value",
+        "advanced": true
+    },
+    {
+        "label":"Time delay (minutes)",
+        "description": "Set the value (in minutes) by which watering resumption should be delayed after stopping in case of weather condition.",
+        "name":"TIME_DELAY",
+        "type":"number",
+        "validation":["decimal",{"default":0},{"min_number":0}],
+        "placeholder":"Set value",
+        "default": 0,
+        "advanced": true
+    },
+    {
+        "label":"Humidity sensor",
+        "description": "Choose the path to the sensor of the humidity.\n(example: sweet-home/device/node/sensor)",
+        "name":"HUMIDITY_TOPIC",
+        "type":"topic",
+        "topicDataTypes":["float","integer"],
+        "validation":["string"],
+        "placeholder":"Select sensor",
+        "advanced": true
+    }
+]

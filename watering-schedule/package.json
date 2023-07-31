@@ -1,0 +1,21 @@
+{
+  "name": "@2smart/watering-schedule",
+  "version": "1.1.1",
+  "description": "This script will allow you to set a watering schedule based on weather conditions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/scheme.json",
+  "iconPath": "/etc/icon.svg",
+  "author": "WebbyLab",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "cron-parser": "^2.15.0"
+  }
+}

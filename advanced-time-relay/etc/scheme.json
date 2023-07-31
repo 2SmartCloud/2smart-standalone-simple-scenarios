@@ -1,0 +1,45 @@
+[
+    {
+        "label":"Schedule",
+        "description": "Configure the schedule by setting the time intervals.",
+        "name":"SCHEDULE_CONFIG",
+        "type":"schedule-config",
+        "validation":[
+            "required",
+            {
+                "list_of_objects":{"start":["required","string"],"end":["required","string"]}
+            },
+            {"list_min_length":1}
+        ],
+        "default":[{"start":"","end":""}]
+    },
+    {
+        "label":"Outputs",
+        "description": "Choose the path to the device or sensors that will be switched.\n(example: sweet-home/device/node/sensor)",
+        "name":"OUTPUT_TOPIC",
+        "type":"topics",
+        "topicDataTypes":["string","integer","float","boolean","enum","color"],
+        "validation":["required","not_empty_list",{"list_of":"string"}],
+        "placeholder":"Select outputs"
+    },
+    {
+        "label":"Message on",
+        "description": "Set the message to start the interval .\n(example: true)",
+        "name":"MESSAGE_ON_VALUE",
+        "type":"string",
+        "default": "true",
+        "validation":["required","string"],
+        "placeholder":"Set value",
+        "advanced": true
+    },
+    {
+        "label":"Message off",
+        "description": "Set the message to end the interval.\n(example: false)",
+        "name":"MESSAGE_OFF_VALUE",
+        "type":"string",
+        "default": "false",
+        "validation":["required","string"],
+        "placeholder":"Set value",
+        "advanced": true
+    }
+]

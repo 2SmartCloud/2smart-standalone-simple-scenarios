@@ -1,0 +1,61 @@
+[
+    {
+        "label": "Source",
+        "description": "Choose the path to the device or sensor for which notifications will come. \n(example: sweet-home/device/node/sensor)",
+        "name": "TOPICS",
+        "type": "topics",
+        "topicDataTypes": [
+            "string",
+            "integer",
+            "float",
+            "boolean",
+            "enum",
+            "color"
+        ],
+        "validation": [
+            "required",
+            "not_empty_list",
+            { "list_of": "string" }
+        ],
+        "placeholder": "Select sensors"
+    },
+    {
+        "label":"Operator",
+        "description": "Choose the condition that notifications will be sent when compared to the value.",
+        "name":"OPERATOR",
+        "type":"enum",
+        "format":[
+            {"label":"Equal","value":"=="},
+            {"label":"Not equal","value":"!="},
+            {"label":"Greater than","value":">"},
+            {"label":"Greater than or equal","value":">="},
+            {"label":"Less than","value":"<"},
+            {"label":"Less than or equal","value":"<="}
+        ],
+        "validation":["required","string"],
+        "placeholder":"Select operator"
+    },
+    {
+        "label":"Value for comparison",
+        "description": "Set the value, after comparison with which notifications will be sent. \n(example: 20)",
+        "name":"VALUE_FOR_COMPARISON",
+        "type":"string",
+        "validation":["required","string"],
+        "placeholder":"Set value"
+    },
+    {
+        "label": "Notification channels",
+        "name": "NOTIFICATION_CHANNELS",
+        "type": "notification-config",
+        "validation": [{ "list_of": "string" }],
+        "default": []
+    },
+    {
+        "lable": "Notification message",
+        "name": "NOTIFICATION_MESSAGE",
+        "type": "string",
+        "validation": ["string"],
+        "placeholder": "Set message",
+        "default": "Notification message from Notifier scenario"
+    }
+]

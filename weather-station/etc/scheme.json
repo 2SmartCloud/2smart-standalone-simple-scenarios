@@ -1,0 +1,20 @@
+[
+    {
+        "label":"Pressure sensor",
+        "description": "Choose the path to the sensor by whose values (in millibars) the weather will be predicted.\n(example: sweet-home/device/node/sensor)",
+        "name":"PRESSURE_TOPIC",
+        "type" : "topic",
+        "topicDataTypes" : ["string", "integer", "float"],
+        "validation": ["required", "string"],
+        "placeholder": "Select sensor"
+    },
+    {
+        "label":"Wind direction sensor",
+        "description": "Choose the path to the sensor by whose values (in degrees) the weather will be predicted.\n(example: sweet-home/device/node/sensor)",
+        "name":"WIND_DIRECTION_TOPIC",
+        "type" : "topic",
+        "topicDataTypes" : ["string", "integer", "float"],
+        "validation": ["required", "string"],
+        "placeholder": "Select sensor"
+    }
+]

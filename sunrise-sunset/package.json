@@ -1,0 +1,23 @@
+{
+  "name": "@2smart/sunrise-sunset",
+  "version": "1.1.8",
+  "description": "This scenario will allow you to trigger your devices in accordance to sunrise and sunset.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple-scenario",
+    "2smart"
+  ],
+  "schemePath": "/etc/sunrise-scheme.json",
+  "iconPath": "/etc/sunrise.svg",
+  "author": "WebbyLab",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "suncalc": "^1.8.0",
+    "sunrise-sunset-js": "^2.1.2",
+    "tz-lookup": "^6.1.25"
+  }
+}

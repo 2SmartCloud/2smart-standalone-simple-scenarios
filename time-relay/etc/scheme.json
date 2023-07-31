@@ -1,0 +1,47 @@
+[
+    {
+        "label": "Schedule",
+        "description": "Configure the schedule for selected message by choosing schedule type (At fixed or Periodically) and setting the time.",
+        "name": "SCHEDULE",
+        "type": "schedule",
+        "validation": [
+            "required",
+            "string"
+        ],
+        "placeholder": "Set schedule"
+    },
+    {
+        "label": "Switchers",
+        "description": "Choose the path to the device or sensors that will be switched when the scenario is triggered. \n(example: sweet-home/device/node/sensor)",
+        "name": "SWITCH_TOPIC",
+        "type": "topics",
+        "topicDataTypes": [
+            "string",
+            "integer",
+            "float",
+            "boolean",
+            "enum",
+            "color"
+        ],
+        "validation": [
+            "required",
+            "not_empty_list",
+            {
+                "list_of": "string"
+            }
+        ],
+        "placeholder": "Select switchers"
+    },
+    {
+        "label": "Message",
+        "description": "Set message to be sent to selected switchers. \n(example: true, 25)",
+        "name": "MESSAGE",
+        "type": "string",
+        "validation": [
+            "required",
+            "string"
+        ],
+        "placeholder": "Set value",
+        "default": "true"
+    }
+]
